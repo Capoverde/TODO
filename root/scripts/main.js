@@ -65,13 +65,15 @@ document.addEventListener('DOMContentLoaded', function () {
             liVal.appendChild(del);
             del.addEventListener('click', function (e) {
                 e.preventDefault();
+                liVal.parentElement.removeChild(liVal);
 
-            });
+            })
+        };
 
 
 
-        }
     }
+
 
 
 
