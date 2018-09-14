@@ -74,14 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             })
         };
-
-
-
     }
-
-
-
-
 
 
     // Czyści całą listę
