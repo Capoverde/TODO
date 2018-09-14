@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         done.addEventListener('click', function (e) {
             liVal.style.background = "lightgreen";
             liVal.style.color = "#464646";
-        })
+        });
 
         var del = document.createElement('div');
         del.className = 'del';
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             liVal.parentElement.removeChild(liVal);
 
-        })
+        });
     }
     //  Dodaje nowy task na koniec listy po kliknięciu entera
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
             done.addEventListener('click', function (e) {
                 liVal.style.background = "lightgreen";
                 liVal.style.color = "#464646";
-            })
+            });
 
             var del = document.createElement('div');
             del.className = 'del';
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 liVal.parentElement.removeChild(liVal);
 
-            })
+            });
         };
     }
 

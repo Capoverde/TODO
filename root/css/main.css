@@ -11,9 +11,9 @@
     --bd-bg: #363636;
     --f-c: #ddd;
     --cont-bg: #464646;
-    --sub-bg: #262626;
+    --sub-bg: #68e022;
     --li-bg: #857c7c;
-    --inp-c: rgb(82, 73, 73);
+    --inp-c: rgb(146, 140, 140);
 }
 
 body {
@@ -30,6 +30,7 @@ body {
     width: 60%;
     height: auto;
     box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, .5);
+    border-radius: 5px;
 }
 
 h1 {
@@ -50,11 +51,14 @@ li {
 }
 
 input[type="text"] {
-    padding: 3px;
+    padding: 6px;
     width: 100%;
     color: var(--inp-c);
     font-family: 'Muli';
     outline: none;
+    border: 1px solid #000;
+    background-color: #363636;
+    margin-bottom: 30px;
 }
 
 input[type="text"]:focus {
@@ -70,7 +74,7 @@ input[type="submit"] {
     padding: 10px;
     background: var(--sub-bg);
     border-style: none;
-    color: var(--f-c);
+    color: green;
     cursor: pointer;
     outline: none;
     transition: .3s;
@@ -81,6 +85,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background: red;
+    color: var(--f-c);
 }
 
 #clear-all {
