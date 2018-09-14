@@ -38,6 +38,11 @@ document.addEventListener('DOMContentLoaded', function () {
         var del = document.createElement('div');
         del.className = 'del';
         liVal.appendChild(del);
+        del.addEventListener('click', function (e) {
+            e.preventDefault();
+            liVal.parentElement.removeChild(liVal);
+
+        })
     }
     //  Dodaje nowy task na koniec listy po kliknięciu entera
 
