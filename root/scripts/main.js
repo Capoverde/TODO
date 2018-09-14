@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var ca = document.getElementById('clear-all');
     // console.log(ca);
 
-
     // ---------- FUNKCJE ------------ //
 
     //  Dodaje nowy task na koniec listy po kliknięciu w przycisk
@@ -27,6 +26,18 @@ document.addEventListener('DOMContentLoaded', function () {
         liVal.appendChild(textNode);
         todos.appendChild(liVal);
         inp.value = '';
+        var done = document.createElement('div');
+        done.className = 'done';
+        liVal.appendChild(done);
+
+        done.addEventListener('click', function (e) {
+            liVal.style.background = "lightgreen";
+            liVal.style.color = "#464646";
+        })
+
+        var del = document.createElement('div');
+        del.className = 'del';
+        liVal.appendChild(del);
     }
     //  Dodaje nowy task na koniec listy po kliknięciu entera
 
@@ -43,13 +54,28 @@ document.addEventListener('DOMContentLoaded', function () {
             var done = document.createElement('div');
             done.className = 'done';
             liVal.appendChild(done);
+
+            done.addEventListener('click', function (e) {
+                liVal.style.background = "lightgreen";
+                liVal.style.color = "#464646";
+            })
+
+            var del = document.createElement('div');
+            del.className = 'del';
+            liVal.appendChild(del);
+            del.addEventListener('click', function (e) {
+                e.preventDefault();
+
+            });
+
+
+
         }
     }
 
-    function clearItem(e) {
 
-        liVal.innerHTML = '';
-    }
+
+
 
     // Czyści całą listę
     function clearAll(e) {
@@ -62,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
     sub.addEventListener('click', sendItems);
     inp.addEventListener('keyup', enterItems);
     ca.addEventListener('click', clearAll);
+    // del.addEventListener('click', clearItem);
 
 
 
