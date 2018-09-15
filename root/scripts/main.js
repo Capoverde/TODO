@@ -19,43 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //  Dodaje nowy task na koniec listy po kliknięciu w przycisk
     function sendItems(e) {
-        e.preventDefault();
-        var inpVal = inp.value;
-        var liVal = document.createElement('li');
-        var textNode = document.createTextNode(inpVal);
-        liVal.appendChild(textNode);
-        todos.appendChild(liVal);
-        inp.value = '';
-        var done = document.createElement('div');
-        done.className = 'done';
-        liVal.appendChild(done);
-
-        done.addEventListener('click', function (e) {
-            liVal.style.background = "lightgreen";
-            liVal.style.color = "#464646";
-        });
-
-        var del = document.createElement('div');
-        del.className = 'del';
-        liVal.appendChild(del);
-        del.addEventListener('click', function (e) {
+        if (inp.value == '') {
+            e.stopImmediatePropagation
+            alert('wprowadź zadanie!');
+        } else {
             e.preventDefault();
-            liVal.parentElement.removeChild(liVal);
-
-        });
-    }
-    //  Dodaje nowy task na koniec listy po kliknięciu entera
-
-    function enterItems(e) {
-        e.preventDefault();
-        if (e.keyCode === 13) {
             var inpVal = inp.value;
             var liVal = document.createElement('li');
             var textNode = document.createTextNode(inpVal);
             liVal.appendChild(textNode);
             todos.appendChild(liVal);
             inp.value = '';
-
             var done = document.createElement('div');
             done.className = 'done';
             liVal.appendChild(done);
@@ -73,7 +47,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 liVal.parentElement.removeChild(liVal);
 
             });
-        };
+        }
+    }
+    //  Dodaje nowy task na koniec listy po kliknięciu entera
+
+    function enterItems(e) {
+        if (inp.value == '') {
+            e.stopImmediatePropagation
+            alert('wprowadź zadanie!');
+        } else {
+            e.preventDefault();
+            if (e.keyCode === 13) {
+                var inpVal = inp.value;
+                var liVal = document.createElement('li');
+                var textNode = document.createTextNode(inpVal);
+                liVal.appendChild(textNode);
+                todos.appendChild(liVal);
+                inp.value = '';
+
+                var done = document.createElement('div');
+                done.className = 'done';
+                liVal.appendChild(done);
+
+                done.addEventListener('click', function (e) {
+                    liVal.style.background = "lightgreen";
+                    liVal.style.color = "#464646";
+                });
+
+                var del = document.createElement('div');
+                del.className = 'del';
+                liVal.appendChild(del);
+                del.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    liVal.parentElement.removeChild(liVal);
+
+                });
+            };
+        }
     }
 
 
